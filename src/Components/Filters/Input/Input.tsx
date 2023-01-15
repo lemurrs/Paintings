@@ -10,6 +10,7 @@ const Input: React.FC<Props> = ({ isDarkTheme, onChange }) => {
 			onChange={e => onChange(e.target.value)}
 			className={isDarkTheme ? c.inputDark : c.inputLight}
 			placeholder={'Name'}
+			style={{ minHeight: '4.2rem' }}
 		></input>
 	)
 }
