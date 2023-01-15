@@ -37,6 +37,7 @@ const HomePage = () => {
 	return (
 		<div className={c.HomePage}>
 			<Filters
+				setCurrentPage={setCurrentPage}
 				setFilterName={setFilterName}
 				isDarkTheme={isDarkTheme}
 				setAuthorId={setAuthorId}

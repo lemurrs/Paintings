@@ -5,11 +5,13 @@ type Props = {
 	isDarkTheme: boolean
 	setCreatedFrom: (a: string) => void
 	setCreatedTo: (a: string) => void
+	setCurrentPage: (a: number) => void
 }
 const Range: React.FC<Props> = ({
 	isDarkTheme,
 	setCreatedFrom,
-	setCreatedTo
+	setCreatedTo,
+	setCurrentPage
 }) => {
 	const [active, setActive] = useState(false)
 
@@ -41,12 +43,14 @@ const Range: React.FC<Props> = ({
 					placeholder={'from'}
 					onChange={e => {
 						setCreatedFrom(e.target.value)
+						setCurrentPage(1)
 					}}
 				/>
 				<input
 					placeholder={'before'}
 					onChange={e => {
 						setCreatedTo(e.target.value)
+						setCurrentPage(1)
 					}}
 				/>
 			</div>

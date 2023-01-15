@@ -16,6 +16,7 @@ type Props = {
 	setCreatedTo: (a: string) => void
 	locationsData: ILocation[]
 	authorsData: IAuthor[]
+	setCurrentPage: (a: number) => void
 }
 const Filters: React.FC<Props> = ({
 	setFilterName,
@@ -25,7 +26,8 @@ const Filters: React.FC<Props> = ({
 	setCreatedFrom,
 	setCreatedTo,
 	locationsData,
-	authorsData
+	authorsData,
+	setCurrentPage
 }) => {
 	const [authorName, setAuthorName] = useState('')
 	const [locationName, setLocationName] = useState('')
@@ -45,10 +47,11 @@ const Filters: React.FC<Props> = ({
 				setAuthorId('')
 				return 0
 			}
+			setCurrentPage(1)
 			setAuthorName(value)
-			setAuthorId(authorsData!.filter(el => el.name === value)[0].id.toString())
+			setAuthorId(authorsData?.find(el => el.name === value)!.id.toString())
 		},
-		[authorsData, setAuthorId]
+		[authorsData, setAuthorId, setCurrentPage]
 	)
 	const handleLocationName = useCallback(
 		(value: string) => {
@@ -57,16 +60,21 @@ const Filters: React.FC<Props> = ({
 				setLocationId('')
 				return 0
 			}
+			setCurrentPage(1)
 			setLocationName(value)
 			setLocationId(
-				locationsDataWithName!.filter(el => el.name === value)[0].id.toString()
+				locationsDataWithName?.find(el => el.name === value)!.id.toString()
 			)
 		},
-		[locationsDataWithName, setLocationId]
+		[locationsDataWithName, setLocationId, setCurrentPage]
 	)
 	return (
 		<div className={c.Filters}>
-			<Input onChange={setFilterName} isDarkTheme={isDarkTheme} />
+			<Input
+				setCurrentPage={setCurrentPage}
+				onChange={setFilterName}
+				isDarkTheme={isDarkTheme}
+			/>
 			<div className={c.Filters__selectWrapper}>
 				<Select
 					disabled={!authorsData}
@@ -105,6 +113,7 @@ const Filters: React.FC<Props> = ({
 				/>
 			</div>
 			<Range
+				setCurrentPage={setCurrentPage}
 				isDarkTheme={isDarkTheme}
 				setCreatedFrom={setCreatedFrom}
 				setCreatedTo={setCreatedTo}
