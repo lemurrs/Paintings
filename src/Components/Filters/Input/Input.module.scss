@@ -1,10 +1,11 @@
 .inputDark {
 	background: #0c0c0c;
 	width: content-box;
+	box-shadow: 0 0 0 1px #fff;
 }
 .inputLight {
 	background: white;
-	border: 1px solid #000000;
+	box-shadow: 0 0 0 1px #000;
 	color: black;
 	&::placeholder {
 		color: rgba(0, 0, 0, 0.3);

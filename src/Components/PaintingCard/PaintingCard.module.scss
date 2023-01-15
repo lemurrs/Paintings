@@ -1,8 +1,9 @@
 .PaintingCard {
 	position: relative;
 	border-radius: 2rem;
-	overflow: hidden;
 	cursor: pointer;
+	overflow: hidden;
+	height: 275px;
 	&:hover {
 		.PaintingCard__info {
 			bottom: 0;
@@ -12,10 +13,10 @@
 		}
 	}
 	& img {
+		height: 100%;
 		width: 100%;
 		border-radius: 2rem;
 		object-fit: cover;
-		height: 275px;
 		object-position: center;
 	}
 	&__info {
@@ -46,23 +47,17 @@
 }
 @media screen and (max-width: 1024px) {
 	.PaintingCard {
-		& img {
-			height: 230px;
-		}
+		height: 230px;
 	}
 }
 @media screen and (max-width: 768px) {
 	.PaintingCard {
-		& img {
-			height: 249px;
-		}
+		height: 249px;
 	}
 }
 
 @media screen and (max-width: 320px) {
 	.PaintingCard {
-		& img {
-			height: 205px;
-		}
+		height: 205px;
 	}
 }
