@@ -1,0 +1,68 @@
+.PaintingCard {
+	position: relative;
+	border-radius: 2rem;
+	overflow: hidden;
+	cursor: pointer;
+	&:hover {
+		.PaintingCard__info {
+			bottom: 0;
+			& > p {
+				white-space: initial;
+			}
+		}
+	}
+	& img {
+		width: 100%;
+		border-radius: 2rem;
+		object-fit: cover;
+		height: 275px;
+		object-position: center;
+	}
+	&__info {
+		color: black;
+		position: absolute;
+		bottom: -104px;
+		left: 0;
+		right: 0;
+		background: rgba(255, 255, 255, 0.75);
+		border-radius: 0 0 0.8rem 0.8rem;
+		padding-left: 1.5rem;
+		padding-bottom: 4.4rem;
+		transition: all 0.2s;
+		& > p {
+			font-size: 1.3rem;
+			margin: 0.5rem 0;
+			font-weight: 300;
+			white-space: nowrap;
+		}
+		&:hover {
+		}
+	}
+	&__title {
+		margin: 0.5rem 0;
+		font-weight: 700;
+		font-size: 1.8rem;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.PaintingCard {
+		& img {
+			height: 230px;
+		}
+	}
+}
+@media screen and (max-width: 768px) {
+	.PaintingCard {
+		& img {
+			height: 249px;
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.PaintingCard {
+		& img {
+			height: 205px;
+		}
+	}
+}

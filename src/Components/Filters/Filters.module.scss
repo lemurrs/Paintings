@@ -1,0 +1,31 @@
+.Filters {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(100px, 1fr));
+	gap: 2rem;
+	margin-bottom: 4.5rem;
+	&__selectWrapper {
+		position: relative;
+		& > img {
+			position: absolute;
+			top: 1.9rem;
+			bottom: 1.8rem;
+			right: 3.8rem;
+			cursor: pointer;
+		}
+	}
+}
+.svgLight {
+	filter: invert(81%) sepia(1%) saturate(1367%) hue-rotate(325deg)
+		brightness(87%) contrast(100%);
+}
+
+@media screen and (max-width: 574px) {
+	.Filters {
+		grid-template-columns: repeat(2, minmax(100px, 1fr));
+	}
+}
+@media screen and (max-width: 320px) {
+	.Filters {
+		grid-template-columns: repeat(1, minmax(100px, 1fr));
+	}
+}

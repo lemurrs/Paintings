@@ -1,0 +1,33 @@
+body {
+	margin: 0;
+	font-family: Roboto, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+html {
+	font-size: 62.5%; /*1rem = 10px*/
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+input,
+select {
+	background: #0c0c0c;
+	border: 1px solid #ffffff;
+	color: white;
+	padding-left: 1.5rem;
+	border-radius: 0.8rem;
+	outline: none;
+	&:focus,
+	&:active {
+		outline: none;
+	}
+}
+input::placeholder {
+	color: rgba(255, 255, 255, 0.3);
+}
+.dark {
+	background: black;
+}

@@ -1,0 +1,12 @@
+.inputDark {
+	background: #0c0c0c;
+	width: content-box;
+}
+.inputLight {
+	background: white;
+	border: 1px solid #000000;
+	color: black;
+	&::placeholder {
+		color: rgba(0, 0, 0, 0.3);
+	}
+}

@@ -1,0 +1,111 @@
+.Range {
+	background: #0c0c0c;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	cursor: pointer;
+
+	& > p {
+		box-shadow: 0 0 0 1px white;
+		border-radius: 0.8rem;
+		display: flex;
+		align-items: center;
+		font-size: 1.3rem;
+		margin: 0;
+		padding-left: 1.5rem;
+		height: 46px;
+	}
+	&__arrowDown {
+		position: absolute;
+		top: 2rem;
+		right: 1.8rem;
+		fill: orange;
+	}
+}
+
+.Range__inputs {
+	cursor: initial;
+	background: #0c0c0c;
+	display: grid;
+	padding: 21px;
+	grid-template-columns: repeat(2, minmax(min-content, 1fr));
+	gap: 32px;
+	position: absolute;
+	top: 100%;
+	box-shadow: 0 0 0 1px white;
+	z-index: 10;
+	border-radius: 0 0 0.8rem 0.8rem;
+	& > input {
+		height: 4.5rem;
+	}
+	&:last-child:before {
+		content: '';
+		width: 1.3rem;
+		height: 0.1rem;
+		position: absolute;
+		left: 50%;
+		transform: translate(-60%, 50%);
+		top: 50%;
+	}
+
+	& > input {
+		width: calc(100% - 2.1rem);
+
+		&::placeholder {
+			color: rgba(0, 0, 0, 0.3);
+		}
+	}
+}
+
+.RangeDark {
+	& > div {
+		&:last-child:before {
+			background: white;
+		}
+
+		& > input {
+			color: black;
+			background: white;
+		}
+	}
+}
+
+.RangeLight {
+	background: white;
+	color: black;
+	& > p {
+		box-shadow: 0 0 0 1px black;
+	}
+	& > div {
+		background: white;
+		box-shadow: 0 0 0 1px black;
+		&:last-child:before {
+			background: black;
+		}
+		& > input {
+			color: black;
+			background: #efefef;
+		}
+	}
+}
+
+.Hidden {
+	display: none;
+}
+.rotate {
+	transform: rotate(180deg);
+}
+.svgLight {
+	filter: invert(81%) sepia(1%) saturate(1367%) hue-rotate(325deg)
+		brightness(87%) contrast(100%);
+}
+@media screen and (max-width: 1024px) {
+	.Range__inputs {
+		grid-template-columns: repeat(1, minmax(min-content, 1fr));
+	}
+}
+@media screen and (max-width: 320px) {
+	.Range__inputs {
+		grid-template-columns: repeat(2, minmax(min-content, 1fr));
+	}
+}

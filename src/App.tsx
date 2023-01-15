@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import './App.scss'
+import HomePage from './Pages/HomePage/HomePage'
+import Header from './Components/Header/Header'
+import { useSelector } from 'react-redux'
+import { appStateType } from './store/store'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const isDarkTheme = useSelector(
+		(state: appStateType) => state.HomePage.isDarkTheme
+	)
+	const theme = isDarkTheme ? 'dark' : 'light'
+
+	useEffect(() => {
+		document.body.classList.add(theme)
+		return () => {
+			document.body.classList.remove(theme)
+		}
+	}, [theme])
+
+	return (
+		<div className={'AppContainer'}>
+			<Header />
+			<HomePage />
+		</div>
+	)
 }
 
-export default App;
+export default App
