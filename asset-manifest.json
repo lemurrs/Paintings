@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Paintings/static/css/main.a665d2a2.css",
-    "main.js": "/Paintings/static/js/main.cff99f12.js",
+    "main.js": "/Paintings/static/js/main.aa8de0fa.js",
     "static/media/ChangeLight.svg": "/Paintings/static/media/ChangeLight.ed35d070a8541801951cefa4bcba0a94.svg",
     "static/media/Logo.svg": "/Paintings/static/media/Logo.341392e0c316e17646ddea30081fb065.svg",
     "static/media/Delete.svg": "/Paintings/static/media/Delete.1a177a91b7db44a93a3431daa588c576.svg",
     "index.html": "/Paintings/index.html",
     "static/media/ArrowDown.svg": "/Paintings/static/media/ArrowDown.9bfc91c72d4df40269bfdef4d116e11c.svg",
     "main.a665d2a2.css.map": "/Paintings/static/css/main.a665d2a2.css.map",
-    "main.cff99f12.js.map": "/Paintings/static/js/main.cff99f12.js.map"
+    "main.aa8de0fa.js.map": "/Paintings/static/js/main.aa8de0fa.js.map"
   },
   "entrypoints": [
     "static/css/main.a665d2a2.css",
-    "static/js/main.cff99f12.js"
+    "static/js/main.aa8de0fa.js"
   ]
 }
