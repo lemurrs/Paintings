@@ -10,8 +10,8 @@ import { IAuthor, ILocation } from '../../interfaces'
 type Props = {
 	setFilterName: (e: string) => void
 	isDarkTheme: boolean
-	setAuthorId: (a: string) => void
-	setLocationId: (a: string) => void
+	setAuthorId: (a: number) => void
+	setLocationId: (a: number) => void
 	setCreatedFrom: (a: string) => void
 	setCreatedTo: (a: string) => void
 	locationsData: ILocation[]
@@ -44,12 +44,12 @@ const Filters: React.FC<Props> = ({
 		(value: string) => {
 			if (!value) {
 				setAuthorName('')
-				setAuthorId('')
+				setAuthorId(0)
 				return 0
 			}
 			setCurrentPage(1)
 			setAuthorName(value)
-			setAuthorId(authorsData?.find(el => el.name === value)!.id.toString())
+			setAuthorId(authorsData?.find(el => el.name === value)!.id)
 		},
 		[authorsData, setAuthorId, setCurrentPage]
 	)
@@ -57,17 +57,16 @@ const Filters: React.FC<Props> = ({
 		(value: string) => {
 			if (!value) {
 				setLocationName('')
-				setLocationId('')
+				setLocationId(0)
 				return 0
 			}
 			setCurrentPage(1)
 			setLocationName(value)
-			setLocationId(
-				locationsDataWithName?.find(el => el.name === value)!.id.toString()
-			)
+			setLocationId(locationsDataWithName?.find(el => el.name === value)!.id)
 		},
 		[locationsDataWithName, setLocationId, setCurrentPage]
 	)
+
 	return (
 		<div className={c.Filters}>
 			<Input

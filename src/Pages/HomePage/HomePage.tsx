@@ -18,13 +18,13 @@ const HomePage = () => {
 	)
 	const [filterName, setFilterName] = useState('')
 	const [currentPage, setCurrentPage] = useState(1)
-	const [authorId, setAuthorId] = useState('')
-	const [locationId, setLocationId] = useState('')
+	const [authorId, setAuthorId] = useState(0)
+	const [locationId, setLocationId] = useState(0)
 	const [createdFrom, setCreatedFrom] = useState('')
 	const [createdTo, setCreatedTo] = useState('')
 
 	const { data, isLoading } = useGetAllPaintingsQuery([
-		currentPage.toString(),
+		currentPage,
 		filterName,
 		authorId,
 		locationId,

@@ -4,23 +4,24 @@ import { IAuthor, ILocation, IPainting } from '../../interfaces'
 import { BASE_URL } from '../../constants'
 
 const removeEmptyKeys = (obj: object) => {
-	return Object.fromEntries(
-		Object.entries(obj).filter(([_, value]) => value !== '')
-	)
+	return Object.fromEntries(Object.entries(obj).filter(([_, value]) => value))
 }
 
 export const paintingApi = createApi({
 	reducerPath: 'paintingApi',
 	baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
 	endpoints: builder => ({
-		getAllPaintings: builder.query<IPainting[], string[]>({
+		getAllPaintings: builder.query<
+			IPainting[],
+			[number, string, number, number, string, string]
+		>({
 			query: ([
 				page = 1,
-				name = '',
-				authorId = '',
-				locationId = '',
-				created_gte = '',
-				created_lte = ''
+				name,
+				authorId,
+				locationId,
+				created_gte,
+				created_lte
 			]) => {
 				let filterData = {
 					q: name,
