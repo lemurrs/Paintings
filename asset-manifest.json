@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Paintings/static/css/main.87f183a5.css",
-    "main.js": "/Paintings/static/js/main.add930de.js",
+    "main.css": "/Paintings/static/css/main.b2d0cf52.css",
+    "main.js": "/Paintings/static/js/main.331fe000.js",
     "static/media/ChangeLight.svg": "/Paintings/static/media/ChangeLight.ed35d070a8541801951cefa4bcba0a94.svg",
     "static/media/Logo.svg": "/Paintings/static/media/Logo.341392e0c316e17646ddea30081fb065.svg",
     "static/media/Delete.svg": "/Paintings/static/media/Delete.1a177a91b7db44a93a3431daa588c576.svg",
     "index.html": "/Paintings/index.html",
     "static/media/ArrowDown.svg": "/Paintings/static/media/ArrowDown.9bfc91c72d4df40269bfdef4d116e11c.svg",
-    "main.87f183a5.css.map": "/Paintings/static/css/main.87f183a5.css.map",
-    "main.add930de.js.map": "/Paintings/static/js/main.add930de.js.map"
+    "main.b2d0cf52.css.map": "/Paintings/static/css/main.b2d0cf52.css.map",
+    "main.331fe000.js.map": "/Paintings/static/js/main.331fe000.js.map"
   },
   "entrypoints": [
-    "static/css/main.87f183a5.css",
-    "static/js/main.add930de.js"
+    "static/css/main.b2d0cf52.css",
+    "static/js/main.331fe000.js"
   ]
 }
